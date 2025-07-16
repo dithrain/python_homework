@@ -132,3 +132,6 @@ def pig_latin(input):
             pigword = word[vowelcut:] + word[:vowelcut] + "ay"
         result.append(pigword)
     return " ".join(result)
+
+# temporary change to allow PR
+
