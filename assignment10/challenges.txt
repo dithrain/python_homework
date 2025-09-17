@@ -1,0 +1,3 @@
+1) The page structure had lots of nested containers, and I've had issues with super-brittle CSS/XPath. Grabbing all links and filtering in Python with a regex that matches the OWASP labels fixed the issue.
+2) Content sometimes takes a while to load. I added a small time.sleep to avoid “element not found” issues. I also could use WebDriverWait instead of sleep.
+3) Some links repeat or have extra anchors. I de-duplicated by title with a set and only kept the first occurrence.

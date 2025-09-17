@@ -1,0 +1,15 @@
+1. Which sections are restricted for crawling?
+- Global (User-agent: *):
+  • Disallow: /w/ , /api/ , /trap/
+  • Disallow: /wiki/Special: and localized variants (Spezial:, Spesial:, etc.)
+  • Many namespace/discussion/admin pages disallowed (e.g., Articles for deletion, Votes/Pages/Miscellany for deletion, Requests for arbitration/adminship/comment, Spam blacklists, Protected titles, various noticeboards, user/admin pages in multiple languages).
+  • Exceptions (explicitly allowed): /w/api.php?action=mobileview& , /w/load.php? , /api/rest_v1/?doc , /w/rest.php/site/v1/sitemap
+  • Disallow everything: MJ12bot, Mediapartners-Google*, UbiCrawler, DOC, Zao, HTTrack, wget (recursive), WebReaper, NPBot, many others.
+
+2. Are there specific rules for certain user agents?
+- Many named bots are completely blocked.
+- Some are rate-limited (e.g., SemrushBot with Crawl-delay: 5).
+- The generic “User-agent: *” has a broad allowlist/denylist as above.
+
+3. Why use robots.txt?
+Robots.txt tells automated crawlers what parts of a site they may fetch and at what pace, which reduces strain on the servers and prevents indexing of low-value or sensitive areas (like admin or dispute pages). It promotes ethical scraping by setting transparent, machine-readable boundaries that well-behaved bots respect.
